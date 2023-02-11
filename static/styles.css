@@ -1,0 +1,35 @@
+.section {
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+  }
+  
+  table {
+      background-color: transparent;
+      margin-bottom: 1rem;
+      width: 100%;
+  }
+  
+  table th,
+  table td {
+      padding: 0.75rem;
+      vertical-align: middle;
+  }
+  
+  tbody tr:nth-of-type(odd) {
+      background-color: rgb(179, 208, 255, 0.3)
+  }
+  .header {
+      background-color: #F5B82E;
+      color: #fff;
+      margin-bottom: 2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+  }
+  .pad
+  {
+      padding-left:30px;
+      padding-right:30px;
+      text-align: center;
+  }

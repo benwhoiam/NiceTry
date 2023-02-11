@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    products
+{% endblock %}
+
+{% block main %}
+<div class="header" style="background-color: #03A9F4;">
+    <h1>Products</h1>
+</div>
+<a href="/admin" class="btn btn-primary">Go back</a>
+
+
+
+
+<div class="container">
+    <div class="section">
+    <form method="post">
+        <input type="text" name="barcode" id="barcode" aria-describedby="emailHelp" placeholder="BarCode"   style =" padding-left:170px;padding-right:170px;text-align: center;" autofocus>
+        <input type="text" name="product" id="product" aria-describedby="emailHelp" placeholder="product"   style =" padding-left:170px;padding-right:170px;text-align: center;">
+        <input type="number"  name= "price" id="price" aria-describedby="emailHelp" class="pad" placeholder="price"  min="0">
+        <input type="number"  name= "items" id="items" aria-describedby="emailHelp" class="pad" placeholder="items "  min="0">
+        <button type="submit" class="btn btn-primary" name="add" style = "padding-left:30px;padding-right:30px; text-align: center;" >Add</button>
+    </form>
+</div>
+</div>
+<p style="color:red;">{{text}}</p>
+<p style="color:green;">{{text2}}</p>
+
+<div class="container">
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>barcode</th>
+                    <th>product</th>
+                    <th>stock</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.barcode}}</td>
+                    <td>{{row.product}}</td>
+                    <td>{{row.stock}}</td>
+                    <td style="color: green;">+{{row.price}}.00MAD</td>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

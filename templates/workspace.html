@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Choice
+{% endblock %}
+
+
+
+
+
+{% block main %}
+<div class="header" style="background-color: #2E944B;">
+    <h1>Totale: {{totale}}.00 MAD</h1>
+</div>
+
+<div class="container">
+    <div class="section">
+    <form method="post">
+        <input type="text" name="barcode" id="barcode" aria-describedby="emailHelp" placeholder="BarCode"   style =" padding-left:170px;padding-right:170px;text-align: center;" autofocus>
+        <input type="number"  name= "items" id="items" aria-describedby="emailHelp" class="pad" placeholder="items " value="1" min="0">
+        <input type="hidden" name="btn_identifier" value="add" />
+        <button type="submit" class="btn btn-primary" name="add" style = "padding-left:30px;padding-right:30px; text-align: center;" >Add</button>
+    </form>
+</div>
+</div>
+<p style="color:red;">{{text}}</p>
+<p style="color:green;">{{text2}}</p>
+
+<div class="container">
+    <div class="section">
+        <h2>Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Barcode</th>
+                    <th>Product</th>
+                    <th>Price</th>
+
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.barcode}}</td>
+                    <td>{{row.product}}</td>
+                    <td>{{row.price}}.00 MAD</td>
+                    <form method="post">
+                    <td><button type="submit" class="btn btn-primary" name="remove" style="background-color: #EA433B;  border: none;">Remove</button></td>
+                    <td><input type="hidden" name="btn_identifier" value="{{row.barcode}}" /></td>
+                    </form>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+{%if (rows|length)>0 %}
+<footer>
+    <form method="post">
+        <input type="hidden" name="btn_identifier" value="pay" />
+        <button type="submit" class="btn btn-primary" name="pay" style = "padding-left:30px;padding-right:30px; text-align: center;background-color: #2E944B;border: none;" >Pay</button>
+    </form>
+</footer>
+{% endif %}
+
+{% endblock %}

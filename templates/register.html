@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Emp adm
+{% endblock %}
+
+
+
+
+
+{% block main %}
+<div class="header" style="background-color: #2E944B;">
+    <h1>All employees and admin</h1>
+</div>
+<div class="container">
+    <div class="section">
+    <form method="post">
+        <div>
+        <input type="text" name="username" id="username" aria-describedby="emailHelp" placeholder="username"  autocomplete="off" style =" padding-left:170px;padding-right:170px;text-align: center;" autofocus>
+        <input type="text" name="password" id="password" aria-describedby="emailHelp" placeholder="password"  autocomplete="off" style =" padding-left:170px;padding-right:170px;text-align: center;" autofocus>
+            <select name="type" id="type">
+              <option value="adm">admin</option>
+              <option value="emp">employee</option>
+            </select>
+        <input type="hidden" name="btn_identifier" value="add" />
+    </div>
+        <button type="submit" class="btn btn-primary" name="add" style = "margin-top:10px;padding-left:30px;padding-right:30px; text-align: center;" >Add</button>
+    </form>
+</div>
+</div>
+<p style="color:red;">{{text}}</p>
+<p style="color:green;">{{text2}}</p>
+
+<div class="container">
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>username</th>
+                    <th>type</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.username}}</td>
+                    {%if row.type== "adm" %}
+                    <td>admin</td>
+                    {%endif%}
+                    {%if row.type== "emp" %}
+                    <td>employee</td>
+                    {%endif%}
+                    <form method="post">
+                    <td><button type="submit" class="btn btn-primary" name="remove" style="background-color: #EA433B;  border: none;">Remove</button></td>
+                    <td><input type="hidden" name="btn_identifier" value="{{row.id}}" /></td>
+                    </form>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+<a href="/admin" class="btn btn-primary">Go back</a>
+{% endblock %}

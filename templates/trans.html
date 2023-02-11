@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction
+{% endblock %}
+
+
+
+
+
+{% block main %}
+<div class="header" style="background-color: #2E944B;">
+    <h1>Transaction</h1>
+</div>
+
+    <div class="section">
+        <table>
+            <thead style="background-color:#63A2B5">
+                <tr>
+                    <th>Username</th>
+                    <th>transaction's_id</th>
+                    <th>MAD200</th>
+                    <th>MAD100</th>
+                    <th>MAD50</th>
+                    <th>MAD20</th>
+                    <th>MAD10</th>
+                    <th>MAD5</th>
+                    <th>MAD2</th>
+                    <th>MAD1</th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.username}}</td>
+                    <td>{{row.tran_id}}</td>
+                    <td>{{row.MAD200}}</td>
+                    <td>{{row.MAD100}}</td>
+                    <td>{{row.MAD50}}</td>
+                    <td>{{row.MAD20}}</td>
+                    <td>{{row.MAD10}}</td>
+                    <td>{{row.MAD5}}</td>
+                    <td>{{row.MAD2}}</td>
+                    <td>{{row.MAD1}}</td>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+    <a href="/admin" class="btn btn-primary">Go back</a>
+
+
+
+
+
+
+{% endblock %}

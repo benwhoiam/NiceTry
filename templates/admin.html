@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    admin
+{% endblock %}
+
+
+
+
+
+{% block main %}
+
+
+<div class="row" style="margin-top: 30px; margin-left:50px; margin-right:50px">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Employees</h5>
+          <p class="card-text">Deregister/Register new employees and admins. </p>
+          <a href="/register" class="btn btn-primary" name="admin">Open</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Records</h5>
+          <p class="card-text">History of all sells and who sold them and profit in cashier</p>
+          <a href="/sells" class="btn btn-primary" name="sells">Open</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px; margin-left:50px; margin-right:50px">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Products</h5>
+          <p class="card-text">Add products and see all available prodcuts in stock </p>
+          <a href="/products" class="btn btn-primary" name="admin">Open</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Workspace</h5>
+          <p class="card-text">Sell items and record them just like a regular employee</p>
+          <a href="/workspace" class="btn btn-primary" name="sells">Open</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px; margin-left:50px; margin-right:50px">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Employees archive</h5>
+          <p class="card-text">List of all active and past employers</p>
+          <a href="/users_archive" class="btn btn-primary">Open</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bank</h5>
+          <p class="card-text">Take cash from cashier or Add to it.</p>
+          <a href="/bank" class="btn btn-primary" >Open</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px; margin-left:50px; margin-right:50px">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Transactions</h5>
+        <p class="card-text">Lists all transactions</p>
+        <a href="/trans" class="btn btn-primary" >Open</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

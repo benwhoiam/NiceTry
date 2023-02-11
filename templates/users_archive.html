@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Archive
+{% endblock %}
+
+{% block main %}
+<div class="header" >
+    <h1>Archive</h1>
+</div>
+<a href="/admin" class="btn btn-primary">Go back</a>
+<div class="container">
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Private_id</th>
+                    <th>Username</th>
+                    <th>Type</th>
+                    <th>Active or not</th>
+
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.username}}</td>
+                    {%if row.type== "adm" %}
+                    <td>admin</td>
+                    {%endif%}
+                    {%if row.type== "emp" %}
+                    <td>employee</td>
+                    {%endif%}
+                    {%if row in table%}
+                    <td style="color:green">Active</td>
+                    {%else%}
+                    <td style="color:red">Inactive</td>
+                    {%endif%}
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

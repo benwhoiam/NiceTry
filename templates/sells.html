@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Records
+{% endblock %}
+
+{% block main %}
+<div class="header" >
+    <h1>Records</h1>
+</div>
+<a href="/admin" class="btn btn-primary">Go back</a>
+<div class="container">
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Barcode</th>
+                    <th>Product</th>
+                    <th>Date and Time</th>
+                    <th>transaction's_id</th>
+                    <th>Profit</th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody>
+                <tr>
+                    <td>{{row.employee}}</td>
+                    <td>{{row.barcode}}</td>
+                    <td>{{row.product}}</td>
+                    <td>{{row.date}}</td>
+                    <td>{{row.tran_id}}</td>
+                    <td style="color: green;">+{{row.profit}}.00MAD</td>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}
